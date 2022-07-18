@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ball_loader</title>
+    <style>
+        *
+        {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container
+        {
+            width: 100%;
+            height: 100vh;
+            background-color: pink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .ball
+        {
+            width: 150px;
+            height: 150px;
+            background-image: linear-gradient(yellow 50%,green 50%);
+            border-radius: 50%;
+            animation: loader 1.5s linear infinite;
+            transition: 1.5s;
+        }
+        @keyframes loader
+        {
+            0%
+            {
+                transform: translateY(-150px) rotate(-360deg);
+            }
+            50%
+            {
+                transform: translateY(0px) rotate(0deg);
+            }
+            100%
+            {
+                transform: translateY(-150px) rotate(360deg);
+            }
+        }
+        .loader
+        {
+            margin-top: 20px;
+            text-transform: uppercase;
+            font-size: 20px;
+            letter-spacing: 2px;
+            color: black;
+        }
+        span
+        {
+            animation: loading 1.5s linear infinite;
+            font-size: 50px;
+        }
+        @keyframes loading 
+        {
+            0%
+            {
+                opacity: 1;
+            }
+            50%
+            {
+                opacity: 0;
+            }
+            100%
+            {
+                opacity: 1;
+            }
+        }
+        .shadow
+        {
+            width: 120px;
+            height: 20px;
+            background-color: rgb(154, 148, 148);
+            border-radius: 50%;
+            animation: shadow 1.5s linear infinite;
+            margin-top: 15px;
+            opacity: 0.8;
+        }
+        @keyframes shadow 
+        {
+            0%
+            {
+                transform: scale(0.5);
+            }   
+            50%
+            {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            100%
+            {
+                transform: scale(0.5);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ball"></div>
+        <div class="shadow"></div>
+        <div class="loader">loading <span>...</span></div>
+    </div>
+</body>
+</html>
